@@ -1,5 +1,4 @@
-import { processLines } from "./Functions";
-import { EASEE_TOKEN, EASEE_URL, NORDPOOL_URL, TIBBER_TOKEN, TIBBER_URL } from "./Variables";
+
 
 
 //Lyrics
@@ -23,6 +22,12 @@ import { EASEE_TOKEN, EASEE_URL, NORDPOOL_URL, TIBBER_TOKEN, TIBBER_URL } from "
 //       });
 //   };
 
+
+const TIBBER_URL = "https://api.tibber.com/v1-beta/gql";
+
+const CHARGER_ID = "EHSXN7S5"
+const EASEE_URL = `https://api.easee.cloud/api/sessions/charger/${CHARGER_ID}/hourly`
+
   //Tibber
   export const makeTibberRequest = async () => {
     try{
@@ -30,7 +35,7 @@ import { EASEE_TOKEN, EASEE_URL, NORDPOOL_URL, TIBBER_TOKEN, TIBBER_URL } from "
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${TIBBER_TOKEN}`,
+        Authorization: `Bearer ${process.env.TIBBER_TOKEN}`,
       },
       redirect: "follow",
       referrerPolicy: "no-referrer",
@@ -77,6 +82,10 @@ import { EASEE_TOKEN, EASEE_URL, NORDPOOL_URL, TIBBER_TOKEN, TIBBER_URL } from "
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
   };
+
+  const NORDPOOL_URL =
+  "https://marketdata-api.nordpoolgroup.com/dayahead/prices/areaBlock"
+
   export const makeNordPoolRequest = async () => {
     fetch(NORDPOOL_URL, {
       method: "GET",
