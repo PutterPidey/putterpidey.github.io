@@ -1,25 +1,24 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import HomeLanding from "./routes/home/HomeLanding";
+import HakeLanding from "./routes/hake/HakeLanding";
+import TibberLanding from "./routes/tibber/TibberLanding";
+import LyricsLanding from "./routes/lyrics/LyricsLanding";
+import NotFound from "./routes/*/NotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to Wonky.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn LLL
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomeLanding />} />
+        <Route path="/hake" element={<HakeLanding />} />
+        <Route path="/tibber" element={<TibberLanding />} />
+        <Route path="/lyrics" element={<LyricsLanding />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
