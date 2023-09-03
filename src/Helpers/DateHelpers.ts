@@ -10,7 +10,7 @@ export const getMonths = (fromDate: Date, toDate: Date) => {
         const monthLimit = year === toYear ? toMonth : 11;
 
         for(; monthNum <= monthLimit; monthNum++) {
-            let month = monthNum + 1;
+            const month = monthNum + 1;
             months.push(new Date(`${year}-${month}-01`));
         }
     }

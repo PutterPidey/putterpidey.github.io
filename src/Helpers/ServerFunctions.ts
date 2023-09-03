@@ -25,8 +25,8 @@
 
 const TIBBER_URL = "https://api.tibber.com/v1-beta/gql";
 
-const CHARGER_ID = "EHSXN7S5"
-const EASEE_URL = `https://api.easee.cloud/api/sessions/charger/${CHARGER_ID}/hourly`
+//const CHARGER_ID = "EHSXN7S5"
+//const EASEE_URL = `https://api.easee.cloud/api/sessions/charger/${CHARGER_ID}/hourly`
 
   //Tibber
   export const makeTibberRequest = async () => {

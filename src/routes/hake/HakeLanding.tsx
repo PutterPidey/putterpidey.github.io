@@ -7,6 +7,7 @@ const views = {
 };
 
 const HakeLanding = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [currentView, setCurrentView] = useState<"laundry">("laundry");
   const CurrentView = views[currentView];
   return (

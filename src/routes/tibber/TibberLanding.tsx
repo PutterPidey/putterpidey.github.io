@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useCallback } from "react";
+import { useEffect, useState } from "react";
+
 import Button from "../../Components/Button/Button";
 import { getMonths } from "../../Helpers/DateHelpers";
-import {
-  loginEasee,
-  makeEaseeRequest,
-  makeTibberRequest,
-} from "../../Helpers/ServerFunctions";
+import { loginEasee, makeTibberRequest } from "../../Helpers/ServerFunctions";
 import "./TibberLanding.css";
 
 type TibberType = { [key: string]: string }[];

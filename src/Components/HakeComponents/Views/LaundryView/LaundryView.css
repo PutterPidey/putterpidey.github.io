@@ -1,0 +1,58 @@
+.laundry-view {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.booker-wrapper {
+  display: flex;
+  flex-grow: 1;
+}
+
+.block-spawner {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.panel {
+  border: 1px solid black;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.right {
+}
+
+.left {
+}
+
+.laundry-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-wrapper {
+  flex-grow: 1;
+}
+
+.laundry-title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.laundry-title-container h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 5em;
+}
+.laundry-title-container h4 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 2em;
+}
