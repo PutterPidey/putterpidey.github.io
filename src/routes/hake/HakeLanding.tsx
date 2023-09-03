@@ -1,12 +1,18 @@
-import brfSplash from "./HakeSplash.jpeg";
 import "./HakeLanding.css";
+import LaundryView from "../../Components/HakeComponents/Views/LaundryView/LaundryView";
+import { useState } from "react";
+
+const views = {
+  laundry: LaundryView,
+};
 
 const HakeLanding = () => {
+  const [currentView, setCurrentView] = useState<"laundry">("laundry");
+  const CurrentView = views[currentView];
   return (
-    <>
-      <img src={brfSplash} alt="splash" />
-      <h1>BRF Hake</h1>
-    </>
+    <div>
+      <CurrentView />
+    </div>
   );
 };
 
