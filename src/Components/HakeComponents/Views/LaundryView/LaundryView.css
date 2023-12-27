@@ -17,19 +17,25 @@
 }
 
 .panel {
-  border: 1px solid black;
+  background-color: rgb(240, 240, 240);
   padding: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 8px;
-  width: 200px;
+  min-width: 184px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 .right {
+  border-bottom-left-radius: 8px;
+  right: 0;
 }
 
 .left {
+  border-bottom-right-radius: 8px;
+  left: 0;
 }
 
 .laundry-header {
@@ -42,6 +48,8 @@
 }
 
 .laundry-title-container {
+  width: 100%;
+  text-align: center;
   display: flex;
   flex-direction: column;
 }

@@ -1,0 +1,26 @@
+.hake-contact-modal {
+  background-color: white;
+  border-radius: 16px;
+  padding: 8px 32px;
+  display: flex;
+  flex-direction: column;
+}
+.hake-contact-modal h2 {
+  font-size: 32px;
+}
+
+.hake-contact-modal h3 {
+  margin: 0;
+  margin-top: 16px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 32px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,6 +1,8 @@
 .block {
+  background-image: url("./Washer.png");
   position: absolute;
   width: 100px;
   height: 100px;
   background: blue;
+  cursor: grab;
 }

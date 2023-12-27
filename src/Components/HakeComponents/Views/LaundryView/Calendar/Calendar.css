@@ -5,18 +5,33 @@
 .calendar-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px;
+  justify-content: center;
+  gap: 32px;
+  margin: 0 32px;
 }
 .calendar-header h2 {
   margin: 0;
 }
+.calendar-button {
+  border-radius: 4px;
+  padding: 8px;
+  border: rgb(180, 180, 180) solid 1px;
+  fill: rgb(100, 100, 100);
+}
+
+.calendar-button:hover {
+  cursor: pointer;
+  transition: 0.4s all;
+  background-color: rgb(240, 240, 240);
+}
+
 .calendar-body {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   height: 100%;
   padding: 8px;
+  margin: 0 auto;
 }
 .day-header {
   text-align: center;
@@ -24,6 +39,7 @@
 .day-header p {
   margin: 0;
   font-weight: 700;
+  background: rgb(240, 240, 240);
 }
 
 .day-container {
@@ -31,13 +47,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100px;
 }
 
 .day-chunk {
-  border-top: black dashed 1px;
-  min-height: 50px;
+  border-top: rgb(180, 180, 180) solid 1px;
+  height: 50px;
+  font-size: 0.8em;
+}
+.day-chunk p {
+  position: relative;
+  left: -50px;
 }
 
-.is-grabbed:hover {
-  background-color: blue;
+.is-grabbed {
+  background-color: rgba(74, 145, 227, 0.62);
 }

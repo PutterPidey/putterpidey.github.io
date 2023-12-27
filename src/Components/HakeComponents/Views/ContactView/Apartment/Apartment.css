@@ -1,0 +1,49 @@
+.hake-apartment {
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 40%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hake-apartment,
+h4,
+p {
+  margin: 0;
+}
+
+.hake-person {
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+}
+
+.remove-person-button {
+  top: 8px;
+  right: 8px;
+  position: absolute;
+  width: 20px;
+  cursor: pointer;
+}
+
+.add-person-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-person-button > * {
+  cursor: pointer;
+  width: 60px;
+  align-self: center;
+  fill: rgb(153, 214, 105);
+}
+
+.add-person-button > * :hover {
+  fill: rgb(131, 182, 92);
+}

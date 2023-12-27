@@ -1,0 +1,11 @@
+.section-divider {
+  width: 100%;
+  padding: 16px 0;
+  font-weight: 800;
+  font-size: 4em;
+  background-color: rgba(181, 128, 208, 0.549);
+
+  color: white;
+  text-align: center;
+  text-decoration: wavy;
+}

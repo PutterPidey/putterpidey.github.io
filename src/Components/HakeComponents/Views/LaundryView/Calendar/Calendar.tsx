@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import ArrowIcon from "../../../../Icons/Arrow";
 import "./Calendar.css";
 
@@ -22,16 +22,40 @@ const Calendar = () => {
   const thisWeek = getWeek(now);
   const thisWeeksMonday = new Date(now.setDate(now.getDate() - now.getDay()));
   const [weekOffset, setWeekOffset] = useState(0);
-  const isGrabbed = true;
+  const [markedSlots, setMarkedSlots] = useState<string[]>([]);
+  const [mouseState, setMouseState] = useState(0);
+
+  const bookSlot = useCallback(
+    (timeString: string) => {
+      if (!mouseState) return;
+      if (!markedSlots.includes(timeString)) {
+        setMarkedSlots([...markedSlots, timeString]);
+      }
+    },
+    [markedSlots, mouseState]
+  );
+
+  window.onmousedown = () => {
+    setMouseState(mouseState + 1);
+  };
+  window.onmouseup = () => {
+    setMouseState(mouseState - 1);
+  };
 
   return (
     <div className="calendar">
       <div className="calendar-header">
-        <div onClick={() => setWeekOffset(Math.max(0, weekOffset - 1))}>
+        <div
+          className="calendar-button"
+          onClick={() => setWeekOffset(Math.max(0, weekOffset - 1))}
+        >
           <ArrowIcon direction="left" />
         </div>
-        <h2>{thisWeek + weekOffset}</h2>
-        <div onClick={() => setWeekOffset(weekOffset + 1)}>
+        <h2>Vecka {thisWeek + weekOffset}</h2>
+        <div
+          className="calendar-button"
+          onClick={() => setWeekOffset(weekOffset + 1)}
+        >
           <ArrowIcon direction="right" />
         </div>
       </div>
@@ -46,15 +70,19 @@ const Calendar = () => {
                 <p>{numToDay[i]}</p>
               </div>
               <div className="day-body">
-                {Array.from(Array(24)).map((_, j) => {
-                  test.setHours(8 + Math.floor(j / 2), j % 2 !== 0 ? 30 : 0, 0);
-
+                {Array.from(Array(12)).map((_, j) => {
+                  test.setHours(8 + j, 0, 0);
+                  const timeString = `${test.toDateString()} ${test.toTimeString()}`;
                   return (
                     <div
-                      className={`day-chunk ${isGrabbed && "is-grabbed"}`}
-                      key={test.toTimeString()}
+                      onMouseOver={() => bookSlot(timeString)}
+                      className={`day-chunk ${
+                        markedSlots.includes(timeString) ? "is-grabbed" : ""
+                      }`}
+                      key={timeString}
+                      id={timeString}
                     >
-                      {test.toTimeString().substring(0, 5)}
+                      <p>{i === 0 && test.toTimeString().substring(0, 5)}</p>
                     </div>
                   );
                 })}

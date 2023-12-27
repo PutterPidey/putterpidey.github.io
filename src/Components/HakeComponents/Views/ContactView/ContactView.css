@@ -1,0 +1,8 @@
+.hake-apartments {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 64px;
+}

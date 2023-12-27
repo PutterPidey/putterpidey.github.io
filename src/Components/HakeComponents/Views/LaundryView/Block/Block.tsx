@@ -4,27 +4,25 @@ type Coordinates = { x: number; y: number };
 
 const Block = () => {
   const [anchor, setAnchor] = useState<Coordinates | null>(null);
-  const [lastPos, setLastPos] = useState<number | null>(null);
+  //const [lastPos, setLastPos] = useState<number | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    console.log(ref.current?.style.transform);
+  }, []);
 
   const onMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      console.log("aSASD");
       if (anchor && ref.current) {
-        console.log("Last Pos", lastPos);
         const translateString = `translate(${e.clientX - anchor.x}px, ${
           e.clientY - anchor.y
         }px)`;
 
-        setLastPos(e.clientX);
-        console.log(lastPos);
-        const rotateString = "rotate(2deg)";
+        const rotateString = `rotate(${e.movementX}deg)`;
         ref.current.style.transform = `${translateString} ${rotateString}`;
       }
     },
-    [anchor, lastPos]
+    [anchor]
   );
   const onMouseDown = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

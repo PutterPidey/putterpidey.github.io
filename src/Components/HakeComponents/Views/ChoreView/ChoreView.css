@@ -1,0 +1,19 @@
+.chore-view,
+h1,
+h2 {
+  all: unset;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.chore-view h1 {
+  font-size: 8em;
+}
+.chore-view h2 {
+  font-size: 4em;
+}
+
+.chore-view {
+  display: flex;
+  flex-direction: column;
+}

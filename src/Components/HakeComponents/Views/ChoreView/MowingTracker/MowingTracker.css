@@ -1,0 +1,20 @@
+.mowing-tracker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.mowing-tracker button {
+  all: unset;
+  padding: 16px;
+  margin-top: 32px;
+  width: 150px;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px black solid;
+  border-radius: 4px;
+}
